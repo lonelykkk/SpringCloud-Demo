@@ -1,0 +1,33 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: user-service
+  datasource:
+    username: root
+    password: root123456
+    url: jdbc:mysql://localhost:3306/testLogin?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+  cloud:
+    nacos:
+      server-addr: 192.168.101.65:8848
+      discovery:
+        namespace: 051bbfcf-adda-4fdd-9fbd-35676e1ac4c7
+#配置mysql-plus
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto #配置主键自增
+      logic-delete-value: 0 #逻辑删除值
+      logic-not-delete-value: 1 #逻辑未删除值
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #配置sql输出，方便我们观察sql
+    #开启驼峰命名
+    map-underscore-to-camel-case: true
