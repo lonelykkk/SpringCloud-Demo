@@ -11,6 +11,8 @@
     <modules>
         <module>user-service</module>
         <module>cloud-gateway</module>
+        <module>chat-service</module>
+        <module>cloud-client</module>
     </modules>
 
     <parent>

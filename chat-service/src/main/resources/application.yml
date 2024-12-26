@@ -1,0 +1,10 @@
+server:
+  port: 8015
+spring:
+  application:
+    name: chat-service
+  cloud:
+    nacos:
+      discovery:
+        namespace: 051bbfcf-adda-4fdd-9fbd-35676e1ac4c7
+        server-addr: 192.168.101.65:8848
