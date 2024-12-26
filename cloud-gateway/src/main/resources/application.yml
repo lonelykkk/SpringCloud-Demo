@@ -10,3 +10,7 @@ spring:
         namespace: 051bbfcf-adda-4fdd-9fbd-35676e1ac4c7
     gateway:
       routes:
+        - id: user
+          uri: lb://user-service
+          predicates:
+            - Path=/api/**

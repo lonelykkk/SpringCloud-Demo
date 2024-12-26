@@ -22,7 +22,7 @@ public class ChatServiceImpl implements ChatService {
 
     @Override
     public String getChat(String msg) {
-        String chat = remoteClient.getPowerAiChat(msg, 1);
+        String chat = remoteClient.getLowerAiChat(msg);
         log.info("gpt接口调用： {}", chat);
         return chat;
     }
