@@ -1,4 +1,4 @@
-package com.kkk.domain.enums;
+package com.kkk.enums;
 
 
 public enum ResponseCodeEnum {

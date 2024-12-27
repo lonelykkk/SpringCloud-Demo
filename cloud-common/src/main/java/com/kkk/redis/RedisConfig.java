@@ -1,4 +1,4 @@
-package com.kkk.config;
+package com.kkk.redis;
 
 import io.lettuce.core.RedisConnectionException;
 import org.redisson.Redisson;

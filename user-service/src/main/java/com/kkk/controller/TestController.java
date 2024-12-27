@@ -21,6 +21,7 @@ public class TestController {
     @Autowired
     private TestService testService;
 
+    @GlobalInterceptor
     @GetMapping("/test")
     public String test() {
         return "ok";

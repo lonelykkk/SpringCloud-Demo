@@ -2,7 +2,7 @@ package com.kkk.service.impl;
 
 import com.kkk.domain.dto.UserDto;
 import com.kkk.domain.entity.User;
-import com.kkk.domain.enums.ResponseCodeEnum;
+import com.kkk.enums.ResponseCodeEnum;
 import com.kkk.domain.vo.UserLoginVo;
 import com.kkk.exception.BusinessException;
 import com.kkk.mapper.UserMapper;

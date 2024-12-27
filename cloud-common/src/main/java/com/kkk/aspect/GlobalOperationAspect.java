@@ -1,10 +1,8 @@
 package com.kkk.aspect;
 
 import com.kkk.annotation.GlobalInterceptor;
-import com.kkk.domain.entity.User;
-import com.kkk.domain.enums.ResponseCodeEnum;
+import com.kkk.enums.ResponseCodeEnum;
 import com.kkk.exception.BusinessException;
-import com.kkk.mapper.UserMapper;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -27,8 +25,6 @@ public class GlobalOperationAspect {
 
     @Resource
     private RedisTemplate<String,String> redisTemplate;
-    @Resource
-    private UserMapper userMapper;
 
     private static Logger logger = LoggerFactory.getLogger(GlobalOperationAspect.class);
 
@@ -65,13 +61,9 @@ public class GlobalOperationAspect {
         String token = request.getHeader("token");
         String value = redisTemplate.opsForValue().get("loginDemo:user:token:"+token);
         if (value == null) {
-            throw new BusinessException("登录超时");
+            throw new RuntimeException("登录超时");
         }
         Long userId = Long.valueOf(value);
-        User user = userMapper.selectById(userId);
-        if (user == null) {
-            throw new BusinessException("请求参数错误，请联系管理员");
-        }
         if (checkAdmin) {
             // 校验是否为管理员操作权限
             // 后续处理

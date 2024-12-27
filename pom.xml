@@ -13,6 +13,7 @@
         <module>cloud-gateway</module>
         <module>chat-service</module>
         <module>cloud-client</module>
+        <module>cloud-common</module>
     </modules>
 
     <parent>

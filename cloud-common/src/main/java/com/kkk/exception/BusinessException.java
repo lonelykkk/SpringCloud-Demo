@@ -1,7 +1,7 @@
 package com.kkk.exception;
 
 
-import com.kkk.domain.enums.ResponseCodeEnum;
+import com.kkk.enums.ResponseCodeEnum;
 
 public class BusinessException extends RuntimeException {
 
